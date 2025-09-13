@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+
+/* === Tùy biến nhanh === */
+$nav-bg: #591010; /* nền thanh menu (giống mẫu của bạn) */
+$link-color: #ffe4b5; /* màu chữ mặc định trong thanh */
+$hover-color: #ffd426; /* màu chữ/underline khi hover */
+$menu-w: 70vw; /* chiều rộng thanh trên desktop */
+$menu-h: 50px; /* chiều cao thanh trên desktop */
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* bỏ width: 74vw; */
+  width: fit-content; /* auto dài theo nội dung */
+  max-width: 90vw; /* không vượt quá màn hình */
+  height: 50px;
+
+  background-color: $nav-bg;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0 20px; /* thêm padding ngang để không dính chữ vào viền */
+  transition: all 0.3s ease;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Item + Link */
+.chu_menu {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(10px, 1.5vw, 18px);
+    color: $link-color;
+    font-weight: 700;
+    padding: 8px 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    /* bóng chữ nhẹ như mẫu */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.45);
+
+    /* Underline chạy từ trái -> phải khi hover */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 0%;
+      height: 2px;
+      background-color: $hover-color;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $hover-color;
+      background-color: rgba(255, 255, 255, 0.08); /* nền mờ nhẹ khi hover */
+      transform: translateY(-2px);
+    }
+    &:hover::after {
+      width: 100%;
+    }
+
+    /* Không bắt buộc tô màu khi active; chỉ hover mới đổi */
+    &.active {
+      color: $link-color;
+    }
+  }
+}
+
+/* Hamburger (ẩn trên desktop, hiện trên mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1100;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: $hover-color;
+    margin: 3px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+}
+
+/* ====== Mobile ====== */
+@media (max-width: 768px) {
+  .navbar {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+    left: auto;
+    border-radius: 50%;
+    transform: none;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: $nav-bg;
+    padding: 15px 20px;
+    border-radius: 10px;
+    z-index: 999;
+    gap: 15px;
+    width: max-content;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+  .menu.show {
+    display: flex;
+  }
+
+  .chu_menu a {
+    font-size: 16px;
+    padding: 10px;
+    transform: none; /* tránh nảy quá lớn trên mobile */
+  }
+}
