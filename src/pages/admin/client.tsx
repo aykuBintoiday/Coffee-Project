@@ -1,7 +1,10 @@
+import "../../styles/admin/client.scss";
+
 const ClientPageAdmin = () => {
   return (
     <>
-      <div>Client Page Admin</div>
+      <div className="background" />
+      <div className="content-no-scroll">Client Page Admin</div>
     </>
   );
 };

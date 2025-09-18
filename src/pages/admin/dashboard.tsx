@@ -1,8 +1,11 @@
+import "../../styles/admin/dashboard.scss";
+
 const DashBoardAdmin = () => {
   return (
-    <div style={{ maxWidth: 640, margin: "40px auto" }}>
-      <h2>Admin Dashboard</h2>
-    </div>
+    <>
+      <div className="background" />
+      <div className="content-no-scroll">Dash Board Admin</div>
+    </>
   );
 };
 export default DashBoardAdmin;

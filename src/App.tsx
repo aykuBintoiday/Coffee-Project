@@ -24,14 +24,13 @@ export function AdminLayout() {
     >
       <aside
         style={{
-          background: "#111827",
-          color: "#fff",
+          background: "#591010",
+          color: "#ffe4b5",
           padding: 16,
           overflowY: "auto",
         }}
       >
-        <h3 style={{ marginBottom: 12 }}>Admin Menu</h3>
-        <MenuPageAdmin /> {/* <-- DÙNG sidebar thật để có link bấm */}
+        <MenuPageAdmin />
       </aside>
 
       <main style={{ padding: 24, background: "#f9fafb" }}>

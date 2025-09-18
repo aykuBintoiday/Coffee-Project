@@ -1,7 +1,9 @@
+import "../../styles/admin/order.scss";
 const OrderPageAdmin = () => {
   return (
     <>
-      <div>Order page admin</div>
+      <div className="background" />
+      <div className="content-no-scroll">Order Admin</div>
     </>
   );
 };

@@ -1,0 +1,36 @@
+/* client.scss */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.background {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: #ffe4b5;
+  z-index: 0; /* dưới cùng */
+  pointer-events: none; /* nền không chặn click */
+}
+
+/* Nếu muốn phần nội dung không bị menu đè và không cuộn: */
+.content-no-scroll {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 240px; /* chừa sidebar */
+  overflow: hidden;
+}
+
+/* Sidebar nổi trên nền */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100dvh;
+  background: #591010;
+  z-index: 10; /* trên nền */
+}
