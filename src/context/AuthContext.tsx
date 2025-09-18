@@ -32,21 +32,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const tk = localStorage.getItem("token");
-    const raw = localStorage.getItem("user");
-    if (tk && raw) {
-      setToken(tk);
-      try {
-        setUser(JSON.parse(raw));
-      } catch {}
-      // optional verify:
-      me(tk).catch(() => {
-        localStorage.clear();
-        setUser(null);
-        setToken(null);
-      });
-    }
-    setReady(true);
+    (async () => {
+      const tk = localStorage.getItem("token");
+      const raw = localStorage.getItem("user");
+      if (tk && raw) {
+        try {
+          setToken(tk);
+          setUser(JSON.parse(raw));
+          // optional: xác thực lại nhưng KHÔNG xoá nếu fail
+          await me(tk).catch(() => {
+            // console.warn("me() failed, keep local session for now");
+          });
+        } catch {
+          localStorage.clear();
+          setUser(null);
+          setToken(null);
+        }
+      }
+      setReady(true);
+    })();
   }, []);
 
   const setAuth = (tk: string, u: User) => {

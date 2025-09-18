@@ -1,31 +1,35 @@
-export type User = {
-  id: number;
-  fullName: string;
-  email: string;
-  role: "CUSTOMER" | "ADMIN";
-};
+export type Role = "CUSTOMER" | "ADMIN";
+export type User = { id: number; fullName: string; email: string; role: Role };
 
-const TK = "token";
-const US = "user";
+class Session {
+  token: string | null = null;
+  user: User | null = null;
 
-export const session = {
-  get token() {
-    return localStorage.getItem(TK);
-  },
-  get user(): User | null {
-    const raw = localStorage.getItem(US);
-    try {
-      return raw ? (JSON.parse(raw) as User) : null;
-    } catch {
-      return null;
+  init() {
+    this.token = localStorage.getItem("token");
+    const raw = localStorage.getItem("user");
+    if (raw) {
+      try {
+        this.user = JSON.parse(raw) as User;
+      } catch {
+        this.user = null;
+      }
     }
-  },
-  set(tk: string, u: User) {
-    localStorage.setItem(TK, tk);
-    localStorage.setItem(US, JSON.stringify(u));
-  },
+  }
+
+  set(token: string, user: User) {
+    this.token = token;
+    this.user = user;
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+
   clear() {
-    localStorage.removeItem(TK);
-    localStorage.removeItem(US);
-  },
-};
+    this.token = null;
+    this.user = null;
+    localStorage.clear();
+  }
+}
+
+export const session = new Session();
+session.init();

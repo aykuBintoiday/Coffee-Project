@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { login } from "../../services/auth";
-import { session } from "../../services/session";
+import { useAuth } from "../../context/AuthContext";
 
 export default function ClientLogin() {
   const [email, setEmail] = useState("");
@@ -9,6 +9,7 @@ export default function ClientLogin() {
   const [err, setErr] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
+  const { setAuth } = useAuth();
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,13 +19,16 @@ export default function ClientLogin() {
       const r = await login(email, password);
       if (!r.ok || !r.token || !r.id || !r.email || !r.fullName || !r.role)
         throw new Error("Sai email/mật khẩu");
-      session.set(r.token, {
+
+      // cập nhật context + localStorage
+      setAuth(r.token, {
         id: r.id,
         email: r.email,
         fullName: r.fullName,
         role: r.role,
       });
-      nav("/"); // hoặc /information, /cart...
+
+      nav(r.role === "ADMIN" ? "/admin" : "/");
     } catch (e: any) {
       setErr(e.message || "Đăng nhập thất bại");
     } finally {
@@ -55,6 +59,9 @@ export default function ClientLogin() {
         </button>
         {err && <div style={{ color: "crimson" }}>{err}</div>}
       </form>
+      <p style={{ marginTop: 16 }}>
+        Nếu bạn chưa có tài khoản hãy <Link to="/register">Đăng ký</Link>
+      </p>
     </div>
   );
 }
