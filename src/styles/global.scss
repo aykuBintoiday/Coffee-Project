@@ -1,0 +1,23 @@
+html,
+body,
+#root {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-y: auto !important;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important; /* tránh tràn ngang do 100vw */
+}
+
+/* KHÔNG cho bất kỳ container nào khóa scroll */
+* {
+  overscroll-behavior: auto !important;
+}
+
+/* Nếu lỡ ẩn scrollbar */
+*::-webkit-scrollbar {
+  display: initial !important;
+}

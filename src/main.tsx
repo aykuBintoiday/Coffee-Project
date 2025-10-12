@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { ClientLayout, AdminLayout } from "./App";
+import "./styles/global.scss";
 
 // Client pages
 import Home from "./pages/client/home";
