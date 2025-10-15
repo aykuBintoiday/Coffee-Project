@@ -1,7 +1,7 @@
 // src/pages/client/home.tsx
 import "../../styles/client/home.scss";
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 /* Ảnh Trang 1 */
 import TrangChu_Trang1 from "../../assets/img/TrangChu_Trang1.png";
@@ -22,6 +22,9 @@ import TrangChu_Trang2_Anh3 from "../../assets/img/TrangChu_Trang2_Anh3.webp";
 import TrangChu_Trang3_Anh1 from "../../assets/img/TrangChu_Trang3_Anh1.jpg";
 import TrangChu_Trang3_Anh2 from "../../assets/img/TrangChu_Trang3_Anh2.jpg";
 import TrangChu_Trang3_Anh3 from "../../assets/img/TrangChu_Trang3_Anh3.jpg";
+
+/* Ảnh Trang 4 */
+import Logo_team_3 from "../../assets/img/Logo_team_3.png";
 
 const HometPageClient = () => {
   const navigate = useNavigate();
@@ -362,7 +365,55 @@ const HometPageClient = () => {
         </div>
       </div>
       {/* ==================== TRANG 4 ==================== */}
-      <div className="Trang4"></div>
+      <div
+        className="Trang4"
+        style={
+          {
+            // ví dụ điều chỉnh vị trí
+            "--t4-col1-top": "38%",
+            "--t4-col1-left": "35%",
+            "--t4-col2-top": "27%",
+            "--t4-col2-left": "63%",
+            "--t4-c1-1-top": "-33%",
+            "--t4-c1-1-left": "-50%",
+
+            // điều chỉnh từng dòng ở cột 2
+            "--t4-c2-1-top": "-2%",
+            "--t4-c2-1-left": "0%",
+            "--t4-c2-2-top": "39px",
+            "--t4-c2-2-left": "0%",
+            "--t4-c2-3-top": "98px",
+            "--t4-c2-3-left": "0%",
+            "--t4-c2-4-top": "68px",
+            "--t4-c2-4-left": "0%",
+            "--t4-c2-5-top": "125px",
+            "--t4-c2-5-left": "0%",
+          } as React.CSSProperties
+        }
+      >
+        <img className="Logo_team_3" src={Logo_team_3} alt="" />
+
+        <div className="Trang4_chu1">
+          <p className="Trang4_chu1_1">Website của chúng tôi : </p>
+          <Link className="Trang4_navItem" to="/introduction">
+            Giới Thiệu
+          </Link>
+          <Link className="Trang4_navItem" to="/product">
+            Sản Phẩm
+          </Link>
+          <Link className="Trang4_navItem" to="/login">
+            Đăng Nhập
+          </Link>
+        </div>
+
+        <div className="Trang4_chu2">
+          <p className="Trang4_chu2_1">Thông Tin Liên Hệ :</p>
+          <p className="Trang4_chu2_2">Email : khoald.24it@vku.udn.vn</p>
+          <p className="Trang4_chu2_4">Email : tamnh.24it@vku.udn.vn</p>
+          <p className="Trang4_chu2_3">SĐT : 0842615456</p>
+          <p className="Trang4_chu2_5">SĐT : 0325118737</p>
+        </div>
+      </div>
 
       {/* ==================== LIGHTBOX ==================== */}
       {previewSrc && (

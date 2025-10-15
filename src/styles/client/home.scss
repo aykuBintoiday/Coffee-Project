@@ -26,8 +26,7 @@ body {
 ================================= */
 .Trang1,
 .Trang2,
-.Trang3,
-.Trang4 {
+.Trang3 {
   width: 100vw;
   min-height: 113svh;
   position: relative;
@@ -602,8 +601,163 @@ body {
    TRANG 4 
 ================================= */
 .Trang4 {
-  background: #1a1a1a;
-  color: #fff;
+  background: #591010;
+  color: #ffe4b5;
+  width: 100vw;
+  height: 25vw; /* theo yêu cầu của bạn */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left; /* để cột text căn trái đẹp hơn */
+  overflow: hidden;
+  font-family: "Work Sans", sans-serif;
+
+  /* Logo */
+  .Logo_team_3 {
+    position: absolute;
+    width: 17%;
+    height: 50%;
+    top: 26%;
+    left: 8%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* ========== Cột 1: Link điều hướng ========== */
+  .Trang4_chu1 {
+    position: absolute;
+    /* bạn có thể tinh chỉnh vị trí cả khối bằng biến: */
+    top: var(--t4-col1-top, 26%);
+    left: var(--t4-col1-left, 30%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Mỗi dòng là 1 nút/đường dẫn */
+  .Trang4_navItem {
+    display: block; /* mỗi item 1 dòng */
+    width: max-content;
+    background: transparent;
+    border: none;
+    padding: 6px 0;
+    margin: 0;
+    cursor: pointer;
+    color: #ffe4b5;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: var(--t4-link-size, 22px);
+    letter-spacing: 0.4px;
+    text-decoration: none; /* nếu dùng <Link> */
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #ffd426;
+      transform: translateX(4px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffd426;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+  }
+
+  /* ========== Cột 2: Thông tin liên hệ (điều chỉnh từng dòng) ========== */
+  .Trang4_chu2 {
+    position: absolute;
+    /* vị trí khối tổng (có thể chỉnh nếu muốn) */
+    top: var(--t4-col2-top, 26%);
+    left: var(--t4-col2-left, 58%);
+    min-width: 280px;
+  }
+
+  /* Từng dòng có thể chỉnh top/left RIÊNG bằng biến */
+  .Trang4_chu1_1,
+  .Trang4_chu2_1,
+  .Trang4_chu2_2,
+  .Trang4_chu2_3,
+  .Trang4_chu2_4,
+  .Trang4_chu2_5 {
+    position: absolute;
+    margin: 0;
+    color: #ffe4b5;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    white-space: nowrap; /* mỗi dòng 1 hàng, bỏ nếu muốn xuống dòng */
+  }
+
+  /* Mặc định + biến tùy chỉnh */
+  .Trang4_chu1_1 {
+    top: var(--t4-c1-1-top, 0%);
+    left: var(--t4-c1-1-left, 0%);
+    font-size: var(--t4-c1-1-size, 22px);
+  }
+  .Trang4_chu2_1 {
+    top: var(--t4-c2-1-top, 0%);
+    left: var(--t4-c2-1-left, 0%);
+    font-size: var(--t4-c2-1-size, 22px);
+  }
+  .Trang4_chu2_2 {
+    top: var(--t4-c2-2-top, 36px);
+    left: var(--t4-c2-2-left, 0%);
+    font-size: var(--t4-c2-2-size, 18px);
+  }
+  .Trang4_chu2_3 {
+    top: var(--t4-c2-3-top, 68px);
+    left: var(--t4-c2-3-left, 0%);
+    font-size: var(--t4-c2-3-size, 18px);
+  }
+  .Trang4_chu2_4 {
+    top: var(--t4-c2-4-top, 75px);
+    left: var(--t4-c2-4-left, 0%);
+    font-size: var(--t4-c2-4-size, 18px);
+  }
+  .Trang4_chu2_5 {
+    top: var(--t4-c2-5-top, 85px);
+    left: var(--t4-c2-5-left, 0%);
+    font-size: var(--t4-c2-5-size, 18px);
+  }
+
+  /* Responsive cơ bản */
+  @media (max-width: 992px) {
+    height: auto; /* cho footer cao theo nội dung */
+    padding: 48px 20px 64px;
+    justify-content: flex-start;
+
+    .Logo_team_3 {
+      position: static;
+      width: 140px;
+      height: auto;
+      margin-right: 18px;
+    }
+
+    .Trang4_chu1 {
+      position: static;
+      margin-left: 8px;
+      margin-top: 8px;
+    }
+
+    .Trang4_chu2 {
+      position: static;
+      margin-top: 18px;
+    }
+
+    .Trang4_chu1_1,
+    .Trang4_chu2_1,
+    .Trang3_chu2_2,
+    .Trang3_chu2_3,
+    .Trang4_chu2_4,
+    .Trang4_chu2_5 {
+      position: static;
+      display: block;
+      white-space: normal;
+      margin: 4px 0;
+    }
+  }
 }
 
 /* ===============================
