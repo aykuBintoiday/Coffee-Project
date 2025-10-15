@@ -83,6 +83,28 @@ const HometPageClient = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const sec = document.querySelector(".Trang3");
+    if (!sec) return;
+
+    let revealed = false;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !revealed) {
+            revealed = true;
+            sec.classList.add("reveal");
+            io.unobserve(e.target); // chỉ chạy 1 lần, không ẩn lại
+          }
+        });
+      },
+      { threshold: 0.1 } // thấy khoảng 25% là reveal
+    );
+
+    io.observe(sec);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <>
       {/* ==================== TRANG 1 ==================== */}
