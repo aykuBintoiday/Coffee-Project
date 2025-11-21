@@ -35,9 +35,6 @@ const MenuPageClient = () => {
           </NavLink>
         </li>
         <li className="chu_menu">
-          <NavLink to="/introduction">Giới Thiệu</NavLink>
-        </li>
-        <li className="chu_menu">
           <NavLink to="/product">Sản Phẩm</NavLink>
         </li>
 

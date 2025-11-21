@@ -17,7 +17,6 @@ import Pay from "./pages/client/pay";
 import Information from "./pages/client/information";
 import ClientLogin from "./pages/client/login";
 import ClientRegister from "./pages/client/register";
-import ClientIntroduction from "./pages/client/introuduction";
 
 // Admin pages (KHÔNG còn AdminLogin)
 import Dashboard from "./pages/admin/dashboard";
@@ -70,7 +69,6 @@ const router = createBrowserRouter([
       },
       { path: "login", element: <ClientLogin /> },
       { path: "register", element: <ClientRegister /> },
-      { path: "introduction", element: <ClientIntroduction /> },
     ],
   },
 

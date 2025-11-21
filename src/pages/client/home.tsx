@@ -375,7 +375,7 @@ const HometPageClient = () => {
             "--t4-col2-top": "27%",
             "--t4-col2-left": "63%",
             "--t4-c1-1-top": "-33%",
-            "--t4-c1-1-left": "-50%",
+            "--t4-c1-1-left": "-30%",
 
             // điều chỉnh từng dòng ở cột 2
             "--t4-c2-1-top": "-2%",
@@ -404,6 +404,7 @@ const HometPageClient = () => {
           <Link className="Trang4_navItem" to="/login">
             Đăng Nhập
           </Link>
+          <p className="Trang4_chu1_2">Tham Gia Cùng Chúng Tôi !</p>
         </div>
 
         <div className="Trang4_chu2">
