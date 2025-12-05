@@ -34,3 +34,187 @@ body {
   background: #591010;
   z-index: 10; /* trên nền */
 }
+
+/* ==== KHỐI CHỨC NĂNG ==== */
+.Chuc_Nang {
+  position: absolute;
+  top: 5%; /* chỉnh theo ý bạn */
+  left: 5%; /* chỉnh theo ý bạn */
+  width: 90%; /* chỉnh theo ý bạn */
+  height: 12%; /* chỉnh theo ý bạn */
+
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  align-items: center;
+  gap: 1.5%;
+  padding: 0 2%;
+  z-index: 5;
+}
+
+/* ==== BUTTON CHUNG ==== */
+.Them,
+.Xoa,
+.Sua {
+  width: 15%;
+  height: 60%;
+  background-color: #ffe4b5;
+  color: #ae2436;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.Them:hover,
+.Xoa:hover,
+.Sua:hover {
+  background-color: #ffd426;
+  color: #890012;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ==== INPUT TÌM KIẾM ==== */
+.Tim_Kiem {
+  flex: 1;
+  height: 60%;
+  padding-left: 12px;
+
+  border-radius: 12px;
+  border: 2px solid #ffe4b5;
+
+  background: #ffe4b5;
+  color: #ae2436;
+  font-size: 1rem;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: 0.2s ease;
+}
+
+.Tim_Kiem:focus {
+  outline: none;
+  background-color: #ffd426;
+  border-color: #890012;
+  color: #890012;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ==== KHUNG HIỂN THỊ DATABASE ==== */
+.Hien_Thi_Database {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 70%;
+
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+/* ==== KHỐI CHỨC NĂNG ==== */
+.Chuc_Nang {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 12%;
+
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.35);
+
+  display: flex;
+  align-items: center;
+  gap: 1.5%;
+  padding: 0 2%;
+  z-index: 5;
+}
+
+/* ==== BUTTON CHUNG ==== */
+.Them,
+.Xoa,
+.Sua {
+  width: 15%;
+  height: 60%;
+  background-color: #ffe4b5;
+  color: #ae2436;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Shadow có màu đỏ (#ae2436) */
+  box-shadow: 0 4px 10px rgba(174, 36, 54, 0.45);
+
+  transition: all 0.2s ease;
+}
+
+/* Hover — Shadow có màu vàng (#ffd426) */
+.Them:hover,
+.Xoa:hover,
+.Sua:hover {
+  background-color: #ffd426;
+  color: #890012;
+
+  box-shadow: 0 6px 16px rgba(255, 212, 38, 0.6);
+}
+
+/* ==== INPUT TÌM KIẾM ==== */
+.Tim_Kiem {
+  flex: 1;
+  height: 60%;
+  padding-left: 12px;
+
+  border-radius: 12px;
+  border: 2px solid #ffe4b5;
+
+  background: #ffe4b5;
+  color: #ae2436;
+  font-size: 1rem;
+
+  /* Shadow dùng màu đỏ nhạt (#ae2436) */
+  box-shadow: 0 4px 10px rgba(174, 36, 54, 0.45);
+
+  transition: 0.2s ease;
+}
+
+.Tim_Kiem:focus {
+  outline: none;
+  background-color: #ffd426;
+  border-color: #890012;
+  color: #890012;
+
+  /* Shadow vàng đậm hơn */
+  box-shadow: 0 6px 18px rgba(255, 212, 38, 0.65);
+}
+
+/* ==== KHUNG HIỂN THỊ DATABASE ==== */
+.Hien_Thi_Database {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 90%;
+  height: 70%;
+
+  background-color: #890012;
+  border-radius: 16px;
+
+  /* Shadow dùng màu đỏ (#890012) */
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}

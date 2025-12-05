@@ -25,7 +25,7 @@ body {
     padding: 0;
     margin: 0;
     position: relative; // thêm
-    top: 20%; // bạn có thể đổi số này để điều chỉnh khoảng cách xuống
+    top: 12%; // bạn có thể đổi số này để điều chỉnh khoảng cách xuống
   }
 
   li {
@@ -70,4 +70,12 @@ body {
   right: 0;
   bottom: 0;
   overflow: hidden; // khóa cuộn khu vực nội dung
+}
+
+.Logo_team {
+  position: relative;
+  width: 70%;
+  height: 15%;
+  top: 5%;
+  left: 12%;
 }

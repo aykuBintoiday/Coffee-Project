@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap");
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+
+  /* FORM CHỮ = WORK SANS */
+  font-family: "Work Sans", sans-serif !important;
+}
+
+/* ============================ */
+/*           PAGE               */
+/* ============================ */
+.LoginPage {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+
+  background-color: #ae2436;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* phủ lớp đen mờ */
+  background: rgba(0, 0, 0, 0.55); /* ĐEN MỜ – đẹp và nổi bật */
+
+  backdrop-filter: blur(3px); /* mờ nhẹ (Apple-like) */
+  z-index: 1;
+}
+
+/* ============================ */
+/*           CARD               */
+/* ============================ */
+.LoginCard {
+  background-color: #ffe4b5;
+  color: #890012;
+  width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+
+  /* GIỮ TITLE = POPPINS (đẹp hơn) */
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.LoginTitle {
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif; /* vẫn giữ Poppins */
+  position: relative;
+  left: 25%;
+}
+
+/* ============================ */
+/*           FORM               */
+/* ============================ */
+.LoginForm {
+  display: grid;
+  gap: 16px;
+}
+
+.LoginInput {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #890012;
+  outline: none;
+  font-size: 15px;
+
+  /* INPUT sử dụng Work Sans */
+  font-family: "Work Sans", sans-serif;
+
+  background: #fff;
+  transition: 0.25s;
+
+  &:focus {
+    border-color: #ae2436;
+    box-shadow: 0 0 5px rgba(174, 36, 54, 0.4);
+  }
+}
+
+/* ============================ */
+/*           BUTTON             */
+/* ============================ */
+.LoginBtn {
+  padding: 14px;
+  background-color: #ae2436;
+  color: #ffe4b5;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+  font-weight: bold;
+
+  /* BUTTON dùng Work Sans */
+  font-family: "Work Sans", sans-serif;
+
+  transition: 0.25s;
+
+  &:hover {
+    background-color: #890012;
+    color: #ffd426;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* ============================ */
+/*           ERROR              */
+/* ============================ */
+.LoginError {
+  color: crimson;
+  margin-top: 6px;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* ============================ */
+/*           FOOTER             */
+/* ============================ */
+.LoginFooter {
+  margin-top: 18px;
+  font-size: 14.5px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.LoginLink {
+  color: #890012;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: "Work Sans", sans-serif;
+
+  &:hover {
+    color: #ae2436;
+  }
+}
+
+@media (max-width: 1440px) {
+  .LoginCard {
+    width: 380px;
+    padding: 32px;
+  }
+}
+
+/* Màn hình < 1024px: thu nữa, title không lệch quá */
+@media (max-width: 1024px) {
+  .LoginCard {
+    width: 340px;
+    padding: 28px;
+  }
+
+  .LoginTitle {
+    left: 0; /* bỏ lệch trái */
+    text-align: center; /* canh giữa cho gọn */
+  }
+}
+
+/* Màn hình < 768px (tablet, mobile ngang) */
+@media (max-width: 768px) {
+  .LoginPage {
+    padding: 16px;
+  }
+
+  .LoginCard {
+    width: 90vw; /* chiếm ~90% màn hình */
+    max-width: 360px;
+    padding: 24px;
+  }
+
+  .LoginTitle {
+    font-size: 24px;
+  }
+
+  .LoginInput {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .LoginBtn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* Màn hình rất nhỏ < 480px (mobile dọc) */
+@media (max-width: 480px) {
+  .LoginCard {
+    width: 94vw;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .LoginTitle {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .LoginFooter {
+    font-size: 13px;
+  }
+}

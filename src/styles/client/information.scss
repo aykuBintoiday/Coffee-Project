@@ -1,0 +1,142 @@
+/* client.scss */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.background {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: #ffe4b5;
+  z-index: 0; /* dưới cùng */
+  pointer-events: none; /* nền không chặn click */
+}
+
+/* ==== KHUNG HIỂN THỊ DATABASE ==== */
+.Information_Hien_Thi_Database1 {
+  position: absolute;
+  top: 29%;
+  left: 23%;
+  width: 72%;
+  height: 68%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+.Information_Hien_Thi_Database2 {
+  position: absolute;
+  top: 41%;
+  left: 5%;
+  width: 16%;
+  height: 56%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+.Information_Hien_Thi_Database3 {
+  position: absolute;
+  top: 17%;
+  left: 23%;
+  width: 72%;
+  height: 9%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+/* ==== AVATAR (ẢNH ĐẠI DIỆN) ==== */
+.Anh_Dai_Dien {
+  position: absolute;
+  top: 13%;
+  left: 7%;
+  width: 12%;
+  height: 23%;
+  background-color: #890012;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  cursor: pointer;
+  z-index: 5;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* ==== MENU HIỆN RA KHI CLICK ẢNH ĐẠI DIỆN ==== */
+.avatar-menu {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  background: #890012;
+  border-radius: 12px;
+  padding: 10px 0;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 6;
+
+  div {
+    padding: 10px 15px;
+    color: #ffe4b5;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #ffd426;
+      color: #890012;
+    }
+  }
+}
+
+/* ==== OVERLAY XEM ẢNH ĐẠI DIỆN ==== */
+.avatar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-overlay img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* NÚT X ĐỂ ĐÓNG */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: red;
+  }
+}
+
+/* ==== INPUT UPLOAD (ẨN ĐI) ==== */
+#avatarUploadInput {
+  display: none;
+}

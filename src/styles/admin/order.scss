@@ -34,3 +34,81 @@ body {
   background: #591010;
   z-index: 10; /* trên nền */
 }
+
+/* ==== KHỐI CHỨC NĂNG ==== */
+.Chuc_Nang {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 12%;
+
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.35);
+
+  display: flex;
+  align-items: center;
+  gap: 1.5%;
+  padding: 0 2%;
+  z-index: 5;
+}
+
+/* ==== BUTTON CHUNG ==== */
+.Them_New,
+.Xoa_New,
+.Sua_New {
+  width: 33%;
+  height: 60%;
+  background-color: #ffe4b5;
+  color: #ae2436;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Shadow có màu đỏ (#ae2436) */
+  box-shadow: 0 4px 10px rgba(174, 36, 54, 0.45);
+
+  transition: all 0.2s ease;
+}
+
+/* Hover — Shadow có màu vàng (#ffd426) */
+.Them_New:hover,
+.Xoa_New:hover,
+.Sua_New:hover {
+  background-color: #ffd426;
+  color: #890012;
+
+  box-shadow: 0 6px 16px rgba(255, 212, 38, 0.6);
+}
+
+/* ==== KHUNG HIỂN THỊ DATABASE ==== */
+.Hien_Thi_Database1 {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 29%;
+  height: 70%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+.Hien_Thi_Database2 {
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  width: 59%;
+  height: 70%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}

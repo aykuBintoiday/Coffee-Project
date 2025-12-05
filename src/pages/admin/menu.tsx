@@ -2,6 +2,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "../../styles/admin/menu.scss";
 import { useAuth } from "../../context/AuthContext";
+import Logo from "../../assets/img/Logo_team_3.png";
 
 const MenuPageAdmin = () => {
   const navClass = ({ isActive }: { isActive: boolean }) =>
@@ -17,25 +18,31 @@ const MenuPageAdmin = () => {
 
   return (
     <div className="sidebar">
+      <img className="Logo_team" src={Logo} alt="" />
       <ul>
         <li>
           <NavLink to="/admin" end className={navClass}>
-            Dashboard
+            Tổng Quan
           </NavLink>
         </li>
         <li>
           <NavLink to="/admin/client" className={navClass}>
-            Client
+            Người Dùng
           </NavLink>
         </li>
         <li>
           <NavLink to="/admin/product" className={navClass}>
-            Product
+            Sản Phẩm
           </NavLink>
         </li>
         <li>
           <NavLink to="/admin/order" className={navClass}>
-            Order
+            Thu Chi
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/admin/chat" className={navClass}>
+            Nhắn Tin
           </NavLink>
         </li>
         <li>

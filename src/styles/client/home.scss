@@ -395,72 +395,6 @@ body {
   }
 
   /* ============================
-     KHUNG 2
-  ============================ */
-  .TrangChu_Trang3_Anh2 {
-    position: absolute;
-    top: var(--t3-a2-top, 45%);
-    left: var(--t3-a2-left, 40%);
-    width: var(--t3-a2-box-w, 320px);
-    height: var(--t3-a2-box-h, 220px);
-    background-color: #ffe4b5;
-    border-radius: var(--t3-radius);
-    overflow: hidden;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.25s ease, background-color 0.25s ease,
-      box-shadow 0.25s ease;
-
-    &:hover {
-      background-color: #ffe16a;
-      transform: translateY(-8px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
-    }
-
-    &:active {
-      transform: translateY(-2px) scale(0.98);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    }
-
-    img {
-      position: absolute;
-      top: var(--t3-a2-img-top, 5%);
-      left: 50%;
-      transform: translateX(-50%);
-      width: var(--t3-a2-img-w, 90%);
-      height: var(--t3-a2-img-h, 90%);
-      object-fit: cover;
-      border-radius: var(--t3-radius);
-      transition: transform 0.25s ease;
-    }
-
-    &:hover img {
-      transform: translateX(-50%) scale(1.03);
-    }
-
-    .TrangChu_Trang3_Chu {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: var(--t3-a2-text-w, auto);
-      height: var(--t3-a2-text-h, auto);
-      font-family: "Work Sans", sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      color: #da0000;
-      text-align: center;
-      letter-spacing: 0.5px;
-      transition: color 0.25s ease, transform 0.25s ease;
-    }
-
-    &:hover .TrangChu_Trang3_Chu {
-      color: #890012;
-      transform: translate(-50%, -4px);
-    }
-  }
-
-  /* ============================
      KHUNG 3
   ============================ */
   .TrangChu_Trang3_Anh3 {
@@ -531,7 +465,6 @@ body {
   ============================ */
   @media (max-width: 768px) {
     .TrangChu_Trang3_Anh1,
-    .TrangChu_Trang3_Anh2,
     .TrangChu_Trang3_Anh3 {
       left: 50%;
       transform: translateX(-50%);
@@ -540,15 +473,11 @@ body {
     .TrangChu_Trang3_Anh1 {
       top: 10%;
     }
-    .TrangChu_Trang3_Anh2 {
-      top: 42%;
-    }
     .TrangChu_Trang3_Anh3 {
       top: 74%;
     }
 
     .TrangChu_Trang3_Anh1,
-    .TrangChu_Trang3_Anh2,
     .TrangChu_Trang3_Anh3 {
       width: min(84vw, 340px);
       height: calc(min(84vw, 340px) * 1.3);
@@ -561,7 +490,6 @@ body {
   }
 
   .TrangChu_Trang3_Anh1,
-  .TrangChu_Trang3_Anh2,
   .TrangChu_Trang3_Anh3 {
     opacity: 0;
     transform: translateY(24px);
@@ -574,13 +502,10 @@ body {
       animation: t3-fade-up 0.9s ease forwards;
       animation-delay: 0s;
     }
-    .TrangChu_Trang3_Anh2 {
-      animation: t3-fade-up 0.9s ease forwards;
-      animation-delay: 0.5s;
-    }
+
     .TrangChu_Trang3_Anh3 {
       animation: t3-fade-up 0.9s ease forwards;
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
   }
 }

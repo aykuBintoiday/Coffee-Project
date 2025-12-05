@@ -18,11 +18,12 @@ import Information from "./pages/client/information";
 import ClientLogin from "./pages/client/login";
 import ClientRegister from "./pages/client/register";
 
-// Admin pages (KHÔNG còn AdminLogin)
+// Admin pages
 import Dashboard from "./pages/admin/dashboard";
 import AdminProduct from "./pages/admin/product";
 import AdminOrder from "./pages/admin/order";
 import AdminClient from "./pages/admin/client";
+import AdminChat from "./pages/admin/chat";
 
 import { AuthProvider } from "./context/AuthContext";
 import { RequireAuth, RequireAdmin } from "./routes/guards";
@@ -81,10 +82,11 @@ const router = createBrowserRouter([
       </RequireAdmin>
     ),
     children: [
-      { index: true, element: <Dashboard /> }, // /admin -> Dashboard
+      { index: true, element: <Dashboard /> },
       { path: "product", element: <AdminProduct /> },
       { path: "order", element: <AdminOrder /> },
       { path: "client", element: <AdminClient /> },
+      { path: "chat", element: <AdminChat /> },
     ],
   },
 

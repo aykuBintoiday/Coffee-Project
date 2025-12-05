@@ -20,7 +20,6 @@ import TrangChu_Trang2_Anh3 from "../../assets/img/TrangChu_Trang2_Anh3.webp";
 
 /* Ảnh Trang 3 */
 import TrangChu_Trang3_Anh1 from "../../assets/img/TrangChu_Trang3_Anh1.jpg";
-import TrangChu_Trang3_Anh2 from "../../assets/img/TrangChu_Trang3_Anh2.jpg";
 import TrangChu_Trang3_Anh3 from "../../assets/img/TrangChu_Trang3_Anh3.jpg";
 
 /* Ảnh Trang 4 */
@@ -298,28 +297,18 @@ const HometPageClient = () => {
           {
             /* ===== Khung 1 ===== */
             "--t3-a1-top": "18%",
-            "--t3-a1-left": "9%",
-            "--t3-a1-box-w": "350px",
+            "--t3-a1-left": "10%",
+            "--t3-a1-box-w": "500px",
             "--t3-a1-box-h": "470px",
             "--t3-a1-img-h": "73%",
             "--t3-a1-img-top": "4%", // 👈 chỉnh TOP ảnh 1
             "--t3-a1-text-w": "200px",
             "--t3-a1-text-h": "25px",
 
-            /* ===== Khung 2 ===== */
-            "--t3-a2-top": "18%",
-            "--t3-a2-left": "37.5%",
-            "--t3-a2-box-w": "350px",
-            "--t3-a2-box-h": "470px",
-            "--t3-a2-img-h": "73%",
-            "--t3-a2-img-top": "4%", // 👈 TOP ảnh 2
-            "--t3-a2-text-w": "200px",
-            "--t3-a2-text-h": "25px",
-
             /* ===== Khung 3 ===== */
             "--t3-a3-top": "18%",
-            "--t3-a3-left": "66%",
-            "--t3-a3-box-w": "350px",
+            "--t3-a3-left": "55%",
+            "--t3-a3-box-w": "500px",
             "--t3-a3-box-h": "470px",
             "--t3-a3-img-h": "73%",
             "--t3-a3-img-top": "4%", // 👈 TOP ảnh 3
@@ -338,18 +327,6 @@ const HometPageClient = () => {
         >
           <img src={TrangChu_Trang3_Anh1} alt="Xem sản phẩm" />
           <p className="TrangChu_Trang3_Chu">Cà Phê Ngay</p>
-        </div>
-
-        <div
-          className="TrangChu_Trang3_Anh2"
-          onClick={() => navigate("/introduction")}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && navigate("/introduction")}
-          aria-label="Đi tới trang Giới thiệu"
-        >
-          <img src={TrangChu_Trang3_Anh2} alt="Giới thiệu" />
-          <p className="TrangChu_Trang3_Chu">Lịch Sử Cà Phê</p>
         </div>
 
         <div
@@ -404,7 +381,6 @@ const HometPageClient = () => {
           <Link className="Trang4_navItem" to="/login">
             Đăng Nhập
           </Link>
-          <p className="Trang4_chu1_2">Tham Gia Cùng Chúng Tôi !</p>
         </div>
 
         <div className="Trang4_chu2">

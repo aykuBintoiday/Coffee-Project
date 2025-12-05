@@ -4,7 +4,11 @@ const DashBoardAdmin = () => {
   return (
     <>
       <div className="background" />
-      <div className="content-no-scroll">Dash Board Admin</div>
+      <div className="content-no-scroll">
+        <div className="Dashboard_Hien_Thi_Database1"></div>
+        <div className="Dashboard_Hien_Thi_Database2"></div>
+        <div className="Dashboard_Hien_Thi_Database3"></div>
+      </div>
     </>
   );
 };

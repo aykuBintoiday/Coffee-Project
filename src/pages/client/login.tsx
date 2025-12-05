@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { login } from "../../services/auth";
 import { useAuth } from "../../context/AuthContext";
+import "../../styles/client/login.scss";
 
 export default function ClientLogin() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,6 @@ export default function ClientLogin() {
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
   const { setAuth } = useAuth();
-
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErr(null);
@@ -37,31 +37,43 @@ export default function ClientLogin() {
   };
 
   return (
-    <div style={{ maxWidth: 420, margin: "60px auto" }}>
-      <h2>Đăng nhập</h2>
-      <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Mật khẩu"
-          value={password}
-          onChange={(e) => setPwd(e.target.value)}
-          required
-        />
-        <button disabled={loading}>
-          {loading ? "Đang đăng nhập..." : "Đăng nhập"}
-        </button>
-        {err && <div style={{ color: "crimson" }}>{err}</div>}
-      </form>
-      <p style={{ marginTop: 16 }}>
-        Nếu bạn chưa có tài khoản hãy <Link to="/register">Đăng ký</Link>
-      </p>
+    <div className="LoginPage">
+      <div className="LoginCard">
+        <h2 className="LoginTitle">Đăng nhập</h2>
+
+        <form onSubmit={onSubmit} className="LoginForm">
+          <input
+            className="LoginInput"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            className="LoginInput"
+            type="password"
+            placeholder="Mật khẩu"
+            value={password}
+            onChange={(e) => setPwd(e.target.value)}
+            required
+          />
+
+          <button className="LoginBtn" disabled={loading}>
+            {loading ? "Đang đăng nhập..." : "Đăng nhập"}
+          </button>
+
+          {err && <div className="LoginError">{err}</div>}
+        </form>
+
+        <p className="LoginFooter">
+          Nếu bạn chưa có tài khoản hãy{" "}
+          <Link to="/register" className="LoginLink">
+            Đăng ký
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

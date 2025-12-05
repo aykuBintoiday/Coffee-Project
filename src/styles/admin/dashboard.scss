@@ -34,3 +34,65 @@ body {
   background: #591010;
   z-index: 10; /* trên nền */
 }
+
+/* ==== KHỐI CHỨC NĂNG ==== */
+.Chuc_Nang {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 12%;
+
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.35);
+
+  display: flex;
+  align-items: center;
+  gap: 1.5%;
+  padding: 0 2%;
+  z-index: 5;
+}
+
+/* ==== KHUNG HIỂN THỊ DATABASE ==== */
+.Dashboard_Hien_Thi_Database1 {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  width: 68%;
+  height: 73%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+.Dashboard_Hien_Thi_Database2 {
+  position: absolute;
+  top: 10%;
+  left: 75%;
+  width: 20%;
+  height: 85%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}
+
+.Dashboard_Hien_Thi_Database3 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 68%;
+  height: 9%;
+  background-color: #890012;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(137, 0, 18, 0.45);
+  padding: 20px;
+  color: #ffd426;
+  overflow-y: auto;
+}

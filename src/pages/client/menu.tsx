@@ -45,9 +45,6 @@ const MenuPageClient = () => {
               <NavLink to="/cart">Giỏ Hàng</NavLink>
             </li>
             <li className="chu_menu">
-              <NavLink to="/order">Theo Dõi Đơn</NavLink>
-            </li>
-            <li className="chu_menu">
               <NavLink to="/pay">Thanh Toán</NavLink>
             </li>
             <li className="chu_menu">
